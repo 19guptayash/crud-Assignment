@@ -24,20 +24,20 @@ function addProduct() {
     if(edit===1){
 
         if(names.value===""){
-            product["name"] = "---";
+            product["name"] = "";
         }else{
             product["name"] = names.value;
         }
     
         if(price.value===""){
-            product["price"] = "---";
+            product["price"] = "";
         }else{
             let x = parseFloat(price.value).toFixed(2);            
             product["price"] = x;
         }
     
         if(description.value===""){
-            product["description"] = "---";
+            product["description"] = "";
         }else{
             product["description"] = description.value;
         }
@@ -59,20 +59,20 @@ function addProduct() {
 
     
     if(names.value===""){
-            product["name"] = "---"
+            product["name"] = ""
     }else{
             product["name"] = names.value;
     }
     
     if(price.value===""){
-        product["price"] = "---"
+        product["price"] = ""
     }else{
         let x = parseFloat(price.value).toFixed(2);
         product["price"] = x;
     }
     
     if(description.value===""){
-        product["description"] = "---"
+        product["description"] = ""
     }else{
         product["description"] = description.value;
     }
@@ -85,7 +85,7 @@ function addProduct() {
     products.push(product);
     product={};
 
-    // update Local Storage
+    
     localStorage.setItem("products",JSON.stringify(products));
 
     console.log("setting element");
@@ -101,7 +101,7 @@ function addProduct() {
 
 }
 
-//  it will be called whenever input type file value changes
+
 function handleEdit(event,index) {
     
     edit = 1;
@@ -112,9 +112,7 @@ function handleEdit(event,index) {
     description.value = products[index].description;
     price.value = products[index].price;
     
-    console.log("")
-    // inputFile.value=products[index].pic;
-    // console.log(btn);
+    console.log("");
     btn.innerHTML = "Add Changes";
     cancelEditButton.classList.add("visible");
     
@@ -137,9 +135,6 @@ function cancelEdit(){
     description.value = "";
     inputFile.value = "";
     heading.innerHTML = "Add Product Details";
-    // load();
-
-
 }
 
 function handleImage(event)
@@ -152,17 +147,13 @@ function handleImage(event)
       console.log("updated")
       console.log(product);
     });
-    // Starts reading the contents of the specified file or blob, once finished, the result attribute contains a data: URL representing the file's data. and load event occur's
     reader.readAsDataURL(image);   
     
 }
 
 function handleDelete(index) {
     
-if(window.confirm("Are you sure?")){
-
-    
-    
+if(window.confirm("Are you sure?")){ 
     products = products.filter((product,ind)=>{
         return ind != index;
     });
@@ -194,8 +185,6 @@ form.addEventListener("submit",(event)=>
         addProduct();
     });
 
-
-// this will load the whole list of products on UI.
 load();
 
 console.log(products);
