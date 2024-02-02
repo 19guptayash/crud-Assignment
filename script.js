@@ -30,8 +30,8 @@ function addProduct() {
         if(price.value===""){
             product["price"] = "---";
         }else{
-            console.log(typeof price.value);
-            product["price"] = price.value ;
+            let x = parseFloat(price.value).toFixed(2);            // parse
+            product["price"] = x;
         }
     
         if(description.value===""){
@@ -70,7 +70,8 @@ function addProduct() {
     if(price.value===""){
         product["price"] = "---"
     }else{
-        product["price"] = price.value +'.00';
+        let x = parseFloat(price.value).toFixed(2);
+        product["price"] = x;
     }
     
     if(description.value===""){

@@ -72,8 +72,11 @@ label{
 table{
     font-size: 14px;
 }
+
 td{
-    max-width: 100px;
+    
+    width: 40px;
+    /* max-width: 100px; */
     padding:4px;
     text-align: center;
 }
