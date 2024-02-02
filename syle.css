@@ -1,0 +1,121 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body{
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #2b3035;
+    min-height: 100vh;
+    font-family: poppins,'Times New Roman', Times, serif;
+} 
+
+.heading{
+    font-size: 16px;
+    color:rgb(27, 27, 27);
+}
+
+form{
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    
+}
+.controller{
+    position: fixed;
+    left:20px;
+    min-width: 300px;  
+}
+
+input{
+    
+    color: rgb(27, 27, 27);
+    margin: 10px 0px;
+    padding: 4px 2px;
+    font-size: 12px;
+}
+label{
+  display: inline-block;
+  color: rgb(27, 27, 27);
+  font-size: 12px;
+  
+}
+
+.cardConatiner{
+    border-radius: 4px;
+    padding: 10px;
+    min-width: 400px;
+    height: fit-content;
+    background-color: rgb(248, 248, 248);
+    
+    color: rgb(27, 27, 27);
+}
+
+.card{
+    display: flex;
+}
+.pic{
+    width: 80px;
+    height: 50px;
+}
+table{
+    font-size: 14px;
+}
+td{
+    max-width: 100px;
+    padding:4px;
+    text-align: center;
+}
+.edit{
+    
+    font-size: 12px;
+   
+}
+.delete{
+    font-size: 12px;   
+}
+
+.edit:hover{
+    color: green;
+}
+
+.delete:hover{
+    color: red;
+}
+/* description column */
+.descol{
+    text-align: left;
+}
+/* price column */
+.pricecol{
+    text-align: right;
+}
+
+.btncontainer{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap:6px;
+}
+.btn{
+    padding: 4px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.canceledit{
+    display: none;
+}
+.visible{
+    display: initial;
+}
