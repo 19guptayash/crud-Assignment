@@ -8,6 +8,8 @@ const cardContainer = document.querySelector(".cardConatiner");
 const cardTable = document.querySelector(".cardTable");
 const cancelEditButton = document.querySelector(".canceledit");
 const heading  = document.querySelector(".heading");
+const form  = document.querySelector("form");
+console.log(form);
 
 
 let products = JSON.parse(localStorage.getItem("products")) || [];
@@ -30,7 +32,7 @@ function addProduct() {
         if(price.value===""){
             product["price"] = "---";
         }else{
-            let x = parseFloat(price.value).toFixed(2);            // parse
+            let x = parseFloat(price.value).toFixed(2);            
             product["price"] = x;
         }
     
@@ -40,11 +42,6 @@ function addProduct() {
             product["description"] = description.value;
         }
         console.log("product pic check");
-
-        // if(product["pic"] === products[indToEdit].pic){
-        //     product["pic"] = 'https://icon-library.com/images/no-picture-available-icon/no-picture-available-icon-1.jpg';
-        // }
-
         products[indToEdit] = product;
         localStorage.setItem("products",JSON.stringify(products));
 
@@ -191,8 +188,12 @@ function load(){
 inputFile.addEventListener("change",handleImage);
 
 cancelEditButton.addEventListener("click",cancelEdit);
+form.addEventListener("submit",(event)=>
+    {
+        event.preventDefault();
+        addProduct();
+    });
 
-btn.addEventListener("click", addProduct);
 
 // this will load the whole list of products on UI.
 load();
